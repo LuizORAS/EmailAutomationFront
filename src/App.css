@@ -1,0 +1,667 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow", sans-serif;
+}
+
+/* ...existing code... */
+
+html, body {
+    height: 100%;
+    color: #f4f4f9;
+    background-color: #121212; /* Dark background */
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.MainBody {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Estilos do HEADER */
+#header {
+    background-image: linear-gradient(to right, #0c0c6f, #070745, #00000a);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#pHeader {
+    margin-bottom: 30px; /* Increase margin-bottom */
+    font-weight: 500;
+    cursor: pointer;
+    transition: .6s;
+    font-size: 2em; /* Further increase font size */
+    letter-spacing: 0.1em; /* Add letter spacing */
+}
+
+#pHeader:hover {
+    color: #00bfff; /* Celeste blue */
+}
+
+#navHeader {
+    margin-top: 10px; /* Add margin-top */
+    display: flex; /* Add flex display */
+    align-items: center; /* Align items in the center */
+    justify-content: center;
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+/* Ícone alinhado no meio entre a borda e o primeiro item da UL */
+ .home-icon {
+    position: absolute;
+    left: 7%; /* Ajuste conforme necessário */
+    top: 3%;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add smooth transition */
+}
+ .home-icon:hover {
+    cursor: pointer;
+    transform: scale(1.1); /* Grow by 25% */
+    color: #ca1414; /* Change color to dark red */
+}
+
+#navHeader .ul-options, .ul-emails {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.ul-emails {
+  gap: 30px; /* Increase spacing between items */
+}
+#navHeader li {
+    padding: 0 20px; /* Increase padding */
+    transition: transform 0.3s ease; /* Add smooth transition */
+    font-size: 1.5em; /* Increase font size */
+    letter-spacing: 0.1em; /* Add letter spacing */
+}
+
+#navHeader li:hover {
+    transform: scale(1.15);
+}
+
+#navHeader a {
+    text-decoration: none;
+    color: #aca0a0;
+    transition: .6s;
+}
+
+#navHeader a:hover {
+    color: #ffd900; /* Original hover color */
+}
+
+/* Estilos da UL-OPTIONS */
+.ul-options {
+  position: absolute;
+  top: 1.4%;
+  right: 5%;
+  font-size: 0.75rem; /* Decrease font size */
+  display: flex;
+  flex-direction: column; /* Set flex direction to column */
+  gap: 2px;
+}
+.notfound-anchor{
+  text-decoration: none;
+  color: #f4f4f9;
+  transition: 0.3s ease;
+}
+.notfound-anchor:hover{
+  color: gold;
+}
+.div-notfound{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer-icon{
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+}
+
+.footer-icon > li{
+  list-style: none;
+  margin-top: 5px;
+  padding: 0 10px;
+  transition: 0.4s ease;
+}
+a {
+  color: inherit; /* Mantém a cor herdada ou outra cor padrão */
+  text-decoration: none; /* Remove o sublinhado se necessário */
+}
+a:visited {
+  color: inherit; /* Define a mesma cor dos links não visitados */
+}
+
+.footer-icon > li:hover{
+  cursor: pointer;
+  transform: scale(1.15);
+  color: red;
+}
+.ul-options >li:hover{
+  cursor: pointer;
+  color: red;
+}
+.ul-options > li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-li-header{
+  margin-top: 5px;
+  margin-left: 7px;
+}
+/* Estilos do MAIN */
+#main {
+    flex: 1;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > p {
+    margin-right: 15px;
+    color: white;
+    font-style: italic;
+}
+
+.imgCover {
+    cursor: pointer;
+    transition: .4s;
+    background-color: #333;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px; 
+    height: 140px;
+    margin: 10px;
+}
+
+.nomeCorte {
+    font-weight: bold;
+}
+
+/* Estilos dos cards de passos no guia */
+.guide-card {
+    background-color: #1e1e1e;
+    color: #f4f4f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+    width: 100%; /* Ocupa 100% da largura disponível do componente pai */
+    max-width: 400px; /* Aumenta a largura máxima dos cards */
+    height: 180px; /* Aumenta a altura dos cards */
+}
+
+.guide-card:hover {
+    transform: scale(1.05);
+}
+
+.guide-card h3 {
+    margin-bottom: 10px;
+    color: #ffd900;
+}
+
+.guide-card p {
+    margin: 0;
+}
+
+/* Estilos das colunas no guia */
+.guide-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px; /* Adiciona espaçamento entre as colunas */
+    width: 100%; /* Ocupa toda a largura do componente pai */
+}
+
+.guide-container .column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilos do FOOTER */
+#footer {
+    background-image: linear-gradient(to right, #0c0c6f, #070745, #00000a);
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+}
+
+.conosco {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#faleConosco {
+    color: #a78f06;
+    margin-bottom: 10px;
+}
+
+#submitButton {
+    margin-top: 10px;
+    height: 30px;
+    width: 80px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: .6s;
+}
+
+#submitButton:hover {
+    background-color: #380000;
+}
+
+input {
+    height: 25px;
+}
+
+
+.f1 {
+    background-image: url("./IMG/f1.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#divLocalizacao {
+    margin: 30px;
+    color: #fcfcfc;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#plocal1 {
+    color: #a78f06;
+    font-style: italic;
+}
+
+#plocal2 {
+    margin-top: 20px;
+    width: 60%;
+}
+
+#preenchaForm {
+    font-style: none !important;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.grid-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grid-item {
+    color: #fcfcfc;
+    padding: 20px;
+}
+
+.headerGrid {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #a78f06;
+}
+
+.divForm {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin: 3px;
+    width: 300px;
+}
+
+#mensagem {
+    height: 100px;
+}
+
+.div-uploadEmail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.div-uploadEmail h2 {
+    margin-bottom: 20px;
+    color: #f4f4f9;
+}
+
+.div-uploadEmail input {
+    height: 60px;
+    margin-bottom: 20px;
+    width: 350px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #333;
+    background-color: #333;
+    color: #f4f4f9;
+}
+
+.button-uploadEmail {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-uploadEmail:hover {
+    background-color: #0056b3;
+}
+
+.div-uploadEmail p {
+    margin-top: 20px;
+    color: #ffd900;
+}
+
+.email-content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    color: #f4f4f9;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.email-content h3 {
+    margin-bottom: 10px;
+    color: #ffd900;
+}
+
+.correctMessage {
+    color: rgb(8, 165, 8) !important;
+}
+
+.email-content p {
+    white-space: pre-wrap;
+}
+
+.all-emails-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 0 auto;
+}
+
+.emails-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    gap: 10px;
+}
+
+.email-card {
+    background-color: #333;
+    color: #f4f4f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.email-card h3 {
+    margin: 0;
+    color: #ffd900;
+}
+.emails-list{
+    margin-top: 20px !important;
+}
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px; /* Adiciona espaçamento entre as colunas */
+    width: 100%; /* Ocupa toda a largura do componente pai */
+}
+
+.column1, .column3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    width: 100%; /* Ocupa 100% da largura disponível do componente pai */
+    max-width: 300px; /* Aumenta a largura máxima dos cards */
+    height: 200px; /* Aumenta a altura dos cards */
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.image-card {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Exemplo de como adicionar imagens via CSS */
+.image-card:nth-child(1) {
+    background-image: url('/path/to/image1.jpg');
+}
+
+.image-card:nth-child(2) {
+    background-image: url('/path/to/image2.jpg');
+}
+
+.image-card:nth-child(3) {
+    background-image: url('/path/to/image3.jpg');
+}
+.service-email {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f4f4f9;
+}
+
+.input-subject, .textarea-body {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #333;
+    color: #f4f4f9;
+}
+
+.textarea-body {
+    height: 100px;
+}
+
+.button-send {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-send:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.classification {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffd900;
+}
+
+.button-fetch-classification {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-fetch-classification:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .imgCover {
+        width: 45%; /* Ajusta a largura dos itens */
+        margin: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #navHeader ul {
+        flex-direction: column;
+    }
+
+    #navHeader li {
+        padding: 10px 0;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .imgCover {
+        width: 90%; /* Ajusta a largura dos itens */
+    }
+
+    #plocal2 {
+        width: 80%;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .divForm input {
+        width: 80%;
+    }
+
+    #mensagem {
+        width: 80%;
+    }
+
+    #footer {
+        padding: 10px; 
+        font-size: 14px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .imgCover {
+        width: 100%; 
+    }
+
+    #plocal2 {
+        width: 90%;
+    }
+
+    .divForm input {
+        width: 100%;
+    }
+
+    #mensagem {
+        width: 100%;
+    }
+
+    #footer {
+        padding: 10px; 
+        font-size: 12px; 
+    }
+}
